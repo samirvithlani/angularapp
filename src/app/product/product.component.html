@@ -1,0 +1,67 @@
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+<p-toast [style]="{marginTop: '80px'}" position="top-left" key="tl"></p-toast>
+
+<p-toast [style]="{marginTop: '80px'}" position="top-center" key="tc"></p-toast>
+
+<p-toast [style]="{marginTop: '80px'}" styleClass="custom-toast" key="custom" position="bottom-center"
+    [showTransformOptions]="'translateX(-100%)'"></p-toast>
+
+
+
+<button type="button" pButton (click)="showSuccess()" label="Success" class="ui-button-success">SHOW</button>
+
+<!-- <p-table [columns]="cols" [value]="productList">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor ="let cols of columns"[pSortableColumn]="cols.field">
+                {{cols.header}}
+                <p-sortIcon [field]="cols.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" >
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+                
+            </td>
+        
+
+        </tr>
+    </ng-template>
+
+
+</p-table>
+ -->
+
+<ul>
+    <li *ngFor="let p of productList">
+
+
+        <a (click)="deleteEmployee(p.eId)">{{p.eId}}</a> &nbsp;&nbsp;&nbsp;
+        <a (click)="getDataById(p.eId)">{{p.eName}}</a>
+
+
+     
+
+    </li>
+</ul>
+<ul>
+    
+    <li><a routerLink="product-detail">ProductDetail</a></li>
+    
+</ul>
+
+
+<ul>
+    <li *ngFor ="let u of userList">
+        {{u.uId}}
+        {{u.uName}}
+        {{u.uEmail}}
+        {{u.uPassword}}
+    </li>
+</ul>
+
+<app-product-detail name="samir"></app-product-detail>
+<router-outlet></router-outlet>

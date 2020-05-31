@@ -1,0 +1,65 @@
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div>
+        id:<input type="text" formControlName="id">
+    </div>
+
+    <div>
+        name:<input type="text" formControlName="name">
+        <div>
+            <span *ngIf="myForm.get('name').invalid && myForm.get('name').dirty">
+                name required...
+            </span>
+        </div>
+    </div>
+    <div>
+        Age:<input type="number" formControlName="age">
+        <div *ngIf="myForm.get('age').invalid">
+            <span *ngIf="myForm.get('age').dirty && myForm.get('age').hasError('ageValid')">
+                Age must be greater than 18.!
+            </span>
+        </div>
+    </div>
+    <br>
+    <div>
+        Salary: <input type="text" formControlName="salary">
+        <div *ngIf="myForm.get('salary').invalid">
+            <span *ngIf="myForm.get('salary').dirty && myForm.get('salary').hasError('minlength')">
+                Salary must be 4 digits.!
+            </span>
+        </div>
+    </div>
+    
+    <div>
+        age:<input type="text" formControlName="age">
+
+        <div *ngIf="myForm.get('age').invalid">
+            <span *ngIf="myForm.get('age').dirty && myForm.get('age').hasError('ageValid')">
+                age must be valid....
+
+            </span>
+
+        </div>
+
+    </div>
+
+<!-- <div>
+    Salary:<input type="text" formControlName="salary">
+        <div>
+            <span *ngIf ="myForm.get('salary').invalid && myForm.get('salary').hasError('minLength')">
+                    required
+            </span>
+        </div>
+
+
+</div>     -->
+
+
+ 
+        <br>
+        <div>
+            <button type="submit">SUBMIT</button>
+        </div>
+
+
+</form>

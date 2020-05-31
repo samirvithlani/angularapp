@@ -1,0 +1,29 @@
+<!-- -<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <div>
+        Id:<input type="text" formControlName="eId">
+    </div>
+    <div>
+        Name:<input type="text" formControlName="eName">
+        
+        <div>
+            <span *ngIf="myForm.get('eName').invalid && myForm.get('eName').dirty">
+                Name is Required Field.!
+            </span>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+
+
+</form> -->
+
+<h1>employee works..</h1>
+
+
+<ul>
+
+    <li *ngFor = "let u of user">
+        {{u.id}}&nbsp;&nbsp;{{u.name|gen:u.gender|uppercase}} &nbsp;&nbsp; {{u.gender}}&nbsp;&nbsp; {{u.birthDate|date}}
+    </li>
+</ul>
